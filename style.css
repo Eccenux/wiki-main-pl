@@ -14,11 +14,11 @@ body {
 }
 
 /* later */
-#main-page-footer,
 #main-page-header {
 	display: none;
 }
 
+/* content boxes */
 #main-page-content {
 	display: grid;
 	grid-template-columns: 1fr 1fr min-content;
@@ -53,4 +53,20 @@ body {
 	#main-page-content .section {
 		min-width: 280px;
 	}
+}
+
+/* footer */
+.sister-projects {
+	display: flex;
+	flex-wrap: wrap;
+}
+.sister-project {
+	width: 220px;
+}
+.sister-project .sister-image {
+	float: left;
+	width: 50px;
+}
+.sister-project p {
+	margin: 0;
 }
