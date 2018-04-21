@@ -14,7 +14,6 @@ body {
 }
 
 /* later */
-#main-page-wikimedia,
 #main-page-header {
 	display: none;
 }
@@ -56,28 +55,38 @@ body {
 	}
 }
 
-/* footer */
-.sister-projects .sister-image {
+/* sister footer */
+.sister-projects {
+	display: flex;
+	flex-wrap: wrap;
+}
+@supports (display: grid) {
+	.sister-projects {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		grid-column-gap: 2em;
+	}
+}
+/* layout inside a sister box */
+.sister-project {
+	width: 220px;
+	display: flex;
+}
+.sister-project .sister-image {
+	width: 60px;
 	margin-top: 1em;
 }
-/* grid with spacer columns */
-.sister-projects {
+
+/* wikimedia footer */
+.main-page-threecol {
 	display: grid;
-	grid-column-gap: 1em;
-	grid-template-columns: repeat(5, min-content max-content 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	grid-column-gap: 2em;
 }
-@media screen and (max-width:1350px) {
-	.sister-projects {
-		grid-template-columns: repeat(4, min-content max-content 1fr);
-	}
+.main-page-threecol {
+	display: flex;
 }
-@media screen and (max-width:1150px) {
-	.sister-projects {
-		grid-template-columns: repeat(3, min-content max-content 1fr);
-	}
-}
-@media screen and (max-width:950px) {
-	.sister-projects {
-		grid-template-columns: repeat(2, min-content max-content 1fr);
-	}
+.main-page-threecol > div {
+	margin-left: 1em;
+	margin-top: 1em;
 }
