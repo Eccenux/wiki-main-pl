@@ -1,0 +1,56 @@
+/* base */
+html {
+	background-color: #f6f6f6;
+}
+body {
+	box-sizing: border-box;
+	font-family: sans-serif;
+	margin: 3em 0 10em 11em;
+	height: auto;
+	padding: 1.25em 1.5em 1.5em 1.5em;
+	border: 1px solid #a7d7f9;
+	border-right-style: none;
+	background-color: #fff;
+}
+
+/* later */
+#main-page-footer,
+#main-page-header {
+	display: none;
+}
+
+#main-page-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr min-content;
+	grid-template-rows: repeat(3, auto);
+	grid-column-gap: 2em;
+}
+
+@media screen and (min-width:1200px) {
+	#main-page-didyouknow       { grid-column: 1; grid-row: 1 }
+	#main-page-news             { grid-column: 1; grid-row: 2 }
+	#main-page-featured-article { grid-column: 2; grid-row: 1 }
+	#main-page-good-article     { grid-column: 2; grid-row: 2 }
+	#main-page-featured-image   { grid-column: 3; grid-row: 1 }
+	#main-page-anniversaries    { grid-column: 1 / span 3; grid-row: 3 }
+}
+@media screen and (min-width:900px) and (max-width:1200px) {
+	#main-page-content {
+		grid-template-columns: calc(50% - 1em) auto min-content;
+	}
+	#main-page-didyouknow       { grid-column: 1; grid-row: 1 }
+	#main-page-news             { grid-column: 1; grid-row: 2 }
+	#main-page-featured-article { grid-column: 2 / span 2; grid-row: 1 }
+	#main-page-good-article     { grid-column: 2 / span 2; grid-row: 2 }
+
+	#main-page-anniversaries    { grid-column: 1 / span 2; grid-row: 3 }
+	#main-page-featured-image   { grid-column: 3; grid-row: 3 }
+}
+@media screen and (max-width:900px) {
+	#main-page-content {
+		display: block;
+	}
+	#main-page-content .section {
+		min-width: 280px;
+	}
+}
