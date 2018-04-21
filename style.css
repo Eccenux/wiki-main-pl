@@ -79,14 +79,19 @@ body {
 
 /* wikimedia footer */
 .main-page-threecol {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	grid-column-gap: 2em;
-}
-.main-page-threecol {
 	display: flex;
 }
-.main-page-threecol > div {
-	margin-left: 1em;
-	margin-top: 1em;
+@supports (display: grid) {
+	.main-page-threecol {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		grid-column-gap: 2em;
+	}
+}
+.main-page-threecol > p {
+	display: flex;
+}
+.main-page-threecol > p > span {
+	display: block;
+	margin-left: .5em;
 }
