@@ -12,6 +12,15 @@ body {
 	border-right-style: none;
 	background-color: #fff;
 }
+#layout-options {
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin: 1em;
+	width: 10em;
+	display: flex;
+	flex-direction: column;
+}
 
 /* later */
 #main-page-header {

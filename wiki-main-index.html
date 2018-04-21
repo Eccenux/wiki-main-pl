@@ -32,20 +32,72 @@
 	link.type = "text/css";
 
 	document.getElementsByTagName("head")[0].appendChild( link );
+
+	// apply layout after reload
+	function applyLayout() {
+		var els = document.querySelectorAll('#layout-options input[type=checkbox]');
+		for (var index = 0; index < els.length; index++) {
+			var el = els[index];
+			if (el.defaultChecked !== el.checked) {
+				console.log('toggle: ', el.parentNode.textContent);
+				el.dispatchEvent(new MouseEvent("click"));
+				el.dispatchEvent(new MouseEvent("click"));
+			}
+		}
+	}
+	document.addEventListener("DOMContentLoaded", function(event) { 
+		applyLayout();
+	});
+
+	// add or remove layout class depending on current state
+	function toogleLayoutClass(state, className) {
+		if (state) {
+			document.body.classList.add(className)
+		} else {
+			document.body.classList.remove(className)
+		}
+	}
 </script>
 <style>
 	.icons-off .mw-headline img {
 		display: none;
 	}
+
+	.header-background-on #main-page h2 {
+		border-radius: 1em;
+		margin-left: -.5em;
+		margin-right: -.5em;
+		border-bottom-style: none;
+	}
+	.header-background-on #main-page-content h2 {
+		background:linear-gradient(to right, #a7d7f9, white);
+	}
+	.header-background-on #main-page-footer h2 {
+		background: #c6fec8;
+	}
+
+	.icons-off.header-background-on #main-page h2 {
+		border-radius: 0;
+		margin-left: 0;
+		margin-right: 0;
+		border-bottom-style: solid;
+		padding: .2em .5em;
+	}
+
 </style>
 
 	
 </script>
 
 <body lang="pl">
-	<label><input type="checkbox" checked
-		onclick="document.body.classList.toggle('icons-off')"
-	>ikonki</label>
+	<div id="layout-options">
+		<label><input type="checkbox" checked
+			onclick="toogleLayoutClass(!this.checked, 'icons-off')"
+		>ikonki</label>
+		<label><input type="checkbox"
+			onclick="toogleLayoutClass(this.checked, 'header-background-on')"
+		>tło nagłówków</label>
+	</div>
 
 	<div class="mw-parser-output mw-body-content">
 		<div class="section" id="main-page">
