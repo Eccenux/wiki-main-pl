@@ -61,6 +61,7 @@ body {
 	flex-wrap: wrap;
 }
 /* this kind of works, but the last row would be miss-aligned and would look bad :-/ */
+/*
 .sister-projects {
 	justify-content: space-between;
 }
@@ -68,7 +69,16 @@ body {
 	content: "";
 	flex: auto;
 }
+*/
+@supports (display: grid) {
+	.sister-projects {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		grid-column-gap: 2em;
+	}
+}
 
+/* layout inside a sister box */
 .sister-project {
 	width: 220px;
 	display: flex;
