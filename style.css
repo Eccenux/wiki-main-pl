@@ -55,21 +55,11 @@ body {
 	}
 }
 
-/* footer */
+/* sister footer */
 .sister-projects {
 	display: flex;
 	flex-wrap: wrap;
 }
-/* this kind of works, but the last row would be miss-aligned and would look bad :-/ */
-/*
-.sister-projects {
-	justify-content: space-between;
-}
-.sister-projects:after {
-	content: "";
-	flex: auto;
-}
-*/
 @supports (display: grid) {
 	.sister-projects {
 		display: grid;
@@ -77,7 +67,6 @@ body {
 		grid-column-gap: 2em;
 	}
 }
-
 /* layout inside a sister box */
 .sister-project {
 	width: 220px;
@@ -85,5 +74,19 @@ body {
 }
 .sister-project .sister-image {
 	width: 60px;
+	margin-top: 1em;
+}
+
+/* wikimedia footer */
+.main-page-threecol {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	grid-column-gap: 2em;
+}
+.main-page-threecol {
+	display: flex;
+}
+.main-page-threecol > div {
+	margin-left: 1em;
 	margin-top: 1em;
 }
