@@ -14,6 +14,7 @@ body {
 }
 
 /* later */
+#main-page-wikimedia,
 #main-page-header {
 	display: none;
 }
@@ -56,17 +57,27 @@ body {
 }
 
 /* footer */
+.sister-projects .sister-image {
+	margin-top: 1em;
+}
+/* grid with spacer columns */
 .sister-projects {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-column-gap: 1em;
+	grid-template-columns: repeat(5, min-content max-content 1fr);
 }
-.sister-project {
-	width: 220px;
+@media screen and (max-width:1350px) {
+	.sister-projects {
+		grid-template-columns: repeat(4, min-content max-content 1fr);
+	}
 }
-.sister-project .sister-image {
-	float: left;
-	width: 50px;
+@media screen and (max-width:1150px) {
+	.sister-projects {
+		grid-template-columns: repeat(3, min-content max-content 1fr);
+	}
 }
-.sister-project p {
-	margin: 0;
+@media screen and (max-width:950px) {
+	.sister-projects {
+		grid-template-columns: repeat(2, min-content max-content 1fr);
+	}
 }
