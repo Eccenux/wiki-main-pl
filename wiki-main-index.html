@@ -32,8 +32,19 @@
 
 	document.getElementsByTagName("head")[0].appendChild( link );
 </script>
+<style>
+	.icons-off .mw-headline img {
+		display: none;
+	}
+</style>
+
+	
+</script>
 
 <body lang="pl">
+	<label><input type="checkbox" checked
+		onclick="document.body.classList.toggle('icons-off')"
+	>ikonki</label>
 
 	<div class="mw-parser-output mw-body-content">
 		<div class="section" id="main-page">
