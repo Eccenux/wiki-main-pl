@@ -84,6 +84,10 @@
 		padding: .2em .5em;
 	}
 
+	.top-header-background-off #main-page-header #main-page-book {
+		background-image: none;
+	}
+
 </style>
 
 	
@@ -91,6 +95,9 @@
 
 <body lang="pl">
 	<div id="layout-options">
+		<label><input type="checkbox" checked
+			onclick="toogleLayoutClass(!this.checked, 'top-header-background-off')"
+		>książka</label>
 		<label><input type="checkbox" checked
 			onclick="toogleLayoutClass(!this.checked, 'icons-off')"
 		>ikonki</label>
