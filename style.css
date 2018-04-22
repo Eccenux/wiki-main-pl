@@ -34,14 +34,13 @@ body {
 	*/
 	border: 1px solid #c5c5c5;
 	border-radius: 1em;
-	font-size: 1.1em;
 }
 #main-page-header #main-page-intro {
 	padding: 5px 15px;
 }
 #main-page-header #main-page-welcome { 
 	display: block;
-	font-size: 1.8em;
+	font-size: 1.5em;
 }
 
 #main-page-header #main-page-book {
@@ -73,7 +72,7 @@ body {
 
 #main-page-header {
 	display: grid;
-	grid-template-columns: max-content 1fr 500px;
+	grid-template-columns: max-content 1fr 520px;
 }
 #main-page-header #main-page-wiki-events {
 	grid-column: 1 / span 3;
