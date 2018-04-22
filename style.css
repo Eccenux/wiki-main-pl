@@ -22,10 +22,77 @@ body {
 	flex-direction: column;
 }
 
-/* later */
-#main-page-header {
-	display: none;
+/* main */
+#main-page {
+	min-width: 300px;
 }
+
+/* header */
+#main-page-header {
+	/*
+	background: url(https://upload.wikimedia.org/wikipedia/commons/3/3e/MP-open-book4.png) -20px -15px no-repeat;
+	*/
+	border: 1px solid #c5c5c5;
+	border-radius: 1em;
+	font-size: 1.1em;
+}
+#main-page-header #main-page-intro {
+	padding: 5px 15px;
+}
+#main-page-header #main-page-welcome { 
+	display: block;
+	font-size: 1.8em;
+}
+
+#main-page-header #main-page-book {
+	background-image: 
+		url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" height=\"500px\" width=\"100%\" style=\"background: rgba(255,255,255,0.9);\"></svg>")
+		,
+		url(https://upload.wikimedia.org/wikipedia/commons/9/91/Book_designed_by_Benny_Forsberg_from_the_Noun_Project_-_with_lines.svg)
+	;
+	background-position: center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+#main-page-header #main-page-portals {
+	text-align: center;
+}
+#main-page-header #main-page-portals span {
+	display: block;
+	margin-bottom: .5em;
+}
+
+#main-page-header #main-page-wiki-events {
+	text-align: center;
+	border-top: 1px solid #c5c5c5;
+}
+#main-page-header #main-page-wiki-events:empty {
+	border-top: 0;
+}
+
+#main-page-header {
+	display: grid;
+	grid-template-columns: max-content 1fr 500px;
+}
+#main-page-header #main-page-wiki-events {
+	grid-column: 1 / span 3;
+	grid-row: 2;
+}
+@media (max-width: 1200px) {
+	#main-page-header #main-page-book {
+		display: none;
+	}
+	#main-page-header {
+		grid-template-columns: max-content 1fr;
+	}
+}
+@media (max-width: 850px) {
+	#main-page-header {
+		display: block;
+	}
+}
+
 
 /* content boxes */
 #main-page-content {
